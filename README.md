@@ -15,12 +15,18 @@ A sophisticated quote generation system built with React, Material-UI, and Fireb
   - Extras configuration
   - Design customization
   - Quote management
+- **Email Notifications**:
+  - Automated email notifications using Brevo API and SMTP
+  - Custom email templates for both admin and users
+  - Professional HTML email formatting
+  - Reliable email delivery through SMTP relay
 
 ## Tech Stack
 
 - React.js
 - Material-UI (MUI)
 - Firebase (Firestore)
+- Brevo (Email Service with SMTP)
 - Custom CSS
 
 ## Installation
@@ -35,27 +41,46 @@ A sophisticated quote generation system built with React, Material-UI, and Fireb
    - Enable Firestore
    - Add your Firebase configuration to the project
 
-4. Start the development server:
+4. Set up Brevo (formerly Sendinblue):
+   - Create a Brevo account
+   - Generate an API key
+   - Configure SMTP credentials
+   - Add both API key and SMTP settings to your environment variables
+
+5. Start the development server:
    ```bash
    npm start
    ```
 
-5. Build for production:
+6. Build for production:
    ```bash
    npm run build
    ```
 
 ## Environment Variables
 
-Create a `.env` file with your Firebase configuration:
+Create a `.env` file with your configuration:
 
 ```
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+# Firebase Configuration
+REACT_APP_FIREBASE_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
 REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 REACT_APP_FIREBASE_APP_ID=your_app_id
+
+# SMTP settings for Brevo
+MAIL_MAILER=smtp
+MAIL_HOST=smtp-relay.brevo.com
+MAIL_PORT=587
+MAIL_USERNAME=your_smtp_username
+MAIL_PASSWORD=your_smtp_password
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=your_from_email_address
+
+# Brevo API Configuration
+REACT_APP_BREVO_API_KEY=your_brevo_api_key_here
 ```
 
 ## Project Structure

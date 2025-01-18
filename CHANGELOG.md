@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
   - Options include Google Search, Social Media, and Friend or Family
   - Added validation for the new field
   - Updated email template to include the source information
+- SMTP configuration for reliable email delivery
+  - Added SMTP relay support through Brevo
+  - Configured environment variables for SMTP settings
+  - Updated documentation for SMTP setup
 
 ### Changed
 - Updated toggle switch pricing system
@@ -16,6 +20,9 @@ All notable changes to this project will be documented in this file.
   - Modified price calculation logic in TentSelectionCard and TentSelection components
   - Updated admin interface to support dual pricing input
   - Improved price display in the table view
+- Enhanced email delivery system
+  - Integrated both Brevo API and SMTP for reliable email delivery
+  - Updated email templates with improved formatting
 
 ### Fixed
 - Removed UK postcode validation pattern from venue location field
@@ -28,6 +35,7 @@ All notable changes to this project will be documented in this file.
 - Improved state management for toggle switch extras
 - Updated Firebase data structure to support new pricing model
 - Added backward compatibility for existing price fields
+- Consolidated email configuration with both API and SMTP settings
 
 ## [1.0.0] - Initial Release
 
