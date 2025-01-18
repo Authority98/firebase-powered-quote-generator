@@ -1,0 +1,58 @@
+:root {
+  --theme-color: initial;
+  --button-color: initial;
+  --secondary-color: initial;
+  --h1-font-family: var(--h1-font, 'FSAlbert'), Arial, sans-serif;
+  --h2-font-family: var(--h2-font, 'FSAlbert'), Arial, sans-serif;
+  --h3-font-family: var(--h3-font, 'FSAlbert'), Arial, sans-serif;
+  --h1-color: initial;
+  --h2-color: initial;
+  --h3-color: initial;
+  --general-text-color: initial;
+  --fallback-font: 'FSAlbert', Arial, sans-serif;
+  --general-text-color-invert: 0; /* 0 for dark text, 1 for light text */
+}
+
+/* Add these new variables for better control over specific elements */
+:root {
+  --input-text-color: var(--general-text-color);
+  --input-border-color: var(--general-text-color);
+  --input-label-color: var(--general-text-color);
+  --checkbox-color: var(--general-text-color);
+  --select-text-color: var(--general-text-color);
+  --calendar-icon-color: initial;
+}
+
+/* Reset all custom color variables to their default values for admin area */
+body.admin-page {
+  --theme-color: initial;
+  --button-color: initial;
+  --secondary-color: initial;
+  --h1-color: initial;
+  --h2-color: initial;
+  --h3-color: initial;
+  --general-text-color: initial;
+  --input-text-color: initial;
+  --input-border-color: initial;
+  --input-label-color: initial;
+  --checkbox-color: initial;
+  --select-text-color: initial;
+  --calendar-icon-color: initial;
+}
+
+/* Add these rules to ensure the fonts are applied */
+h1, .h1 {
+  font-family: var(--h1-font-family), var(--fallback-font);
+}
+
+h2, .h2 {
+  font-family: var(--h2-font-family), var(--fallback-font);
+}
+
+h3, .h3 {
+  font-family: var(--h3-font-family), var(--fallback-font);
+}
+
+body {
+  font-family: var(--fallback-font);
+}

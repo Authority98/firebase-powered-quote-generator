@@ -1,0 +1,1441 @@
+/* Add these rules at the top of your App.css file */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@import url('https://fonts.cdnfonts.com/css/fsalbert');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+:root {
+  --deep-pink: #4F7586;
+  --white: #FFFF;
+  --theme-color: #4E7586;
+  --h1-color: #000000;
+  --h2-color: #000000;
+  --h3-color: #000000;
+  --general-text-color: #FFFFFF; /* Default value */
+}
+
+body {
+  color: var(--general-text-color);
+}
+
+/* General text color for the frontend, excluding buttons */
+body:not(.admin-page) .MuiTypography-root:not(.MuiTypography-colorTextPrimary):not(.MuiTypography-colorTextSecondary),
+body:not(.admin-page) .MuiInputBase-root,
+body:not(.admin-page) .MuiInputLabel-root,
+body:not(.admin-page) .MuiFormHelperText-root {
+  color: #000000 !important;
+}
+
+/* Keep button text color unchanged */
+body:not(.admin-page) .MuiButton-root {
+  color: inherit;
+}
+
+/* Style for filled variant of TextField */
+body:not(.admin-page) .MuiFilledInput-root {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+body:not(.admin-page) .MuiFilledInput-root:hover {
+  background-color: rgba(255, 255, 255, 0.13) !important;
+}
+
+body:not(.admin-page) .MuiFilledInput-root.Mui-focused {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* Override for product card text color */
+.tentSelectionCardBody * {
+  color: initial !important;
+}
+
+.cursor-context {
+  cursor: context-menu;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Update the link styles to remove global bold */
+a {
+  text-decoration: none !important;
+  color: var(--general-text-color) !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+  opacity: 0.8;
+}
+
+/* Add a new class for bold links */
+.bold-link {
+  font-weight: bold !important;
+}
+
+/* Specific styles for footer links */
+.footer-content a,
+.contactInfo a,
+.contactInfoFlex a,
+.contactInfoTent a {
+  font-weight: normal !important;
+  color: var(--general-text-color) !important;
+  text-decoration: none !important;
+}
+
+.footer-content a:hover,
+.contactInfo a:hover,
+.contactInfoFlex a:hover,
+.contactInfoTent a:hover {
+  text-decoration: underline !important;
+  opacity: 0.8;
+}
+
+.container {
+  color: var(--white);
+  margin: 60px !important;
+}
+
+.container-side {
+  color: var(--white);
+  margin: 60px 60px 60px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.header {
+  color: var(--white);
+  box-sizing: border-box !important;
+}
+
+.headerNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+  gap: 45px;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 768px) {
+
+  .headerNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+  }
+}
+
+.sm-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'FSAlbert', sans-serif;
+  font-weight: 300 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.mainHeading {
+  font-weight: 300 !important;
+  font-size: 25px !important;
+  margin-bottom: 22.4px !important;
+}
+
+.mainBodyText {
+  margin: 0 0 38.4px 0 !important;
+  line-height: 20px;
+  font-size: 16px;
+  font-stretch: 100%;
+  color: var(--general-text-color);
+}
+
+.stepper-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 290px;
+  background-color: transparent;
+}
+
+.stepper {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.step {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid var(--secondary-color) !important;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: var(--general-text-color) !important;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.step.active {
+  background-color: var(--secondary-color) !important;
+  color: var(--general-text-color) !important;
+  border: 1px solid var(--secondary-color) !important; /* Changed to use secondary color */
+  cursor: default;
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 101.5%;
+  width: 42px;
+  height: 1px;
+  background-color: var(--secondary-color) !important;
+  z-index: 0;
+}
+
+.step:first-child::before {
+  content: none;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 900px) {
+  .stepper-container {
+    width: 200px;
+  }
+
+  .stepper {
+    justify-content: space-around;
+  }
+
+  .step {
+    width: 25px;
+    height: 25px;
+    line-height: 26px;
+    font-size: 12px;
+  }
+
+  .step::before {
+    width: 24px;
+  }
+}
+
+.contactInfo {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.footer .fs-60 {
+  display: block;
+  font-weight: 300 !important;
+  /* margin: 0 0 16px 0; */
+}
+
+.contactInfo .fs-16:not(:last-child)::after {
+  content: '|';
+  margin: 0 10px;
+  color: yellow;
+}
+
+@media (max-width: 900px) {
+  .contactInfo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0px !important;
+  }
+
+  .footer .fs-60 {
+    font-weight: 300 !important;
+    display: none;
+  }
+
+}
+
+@media (max-width: 770px) {
+  .contactInfo {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0px !important;
+  }
+
+  .footer .fs-60 {
+    display: none;
+  }
+
+  .contactInfo .fs-16:not(:last-child)::after {
+    content: '';
+    margin: 0;
+    color: none;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 40px;
+}
+
+.custom-textfield {
+  width: 300px !important;
+}
+
+.qty-field .MuiFilledInput-root {
+  color: white !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.qty-field .MuiFilledInput-root:not(:focus):hover {
+  color: white !important;
+}
+
+.qty-field .MuiFilledInput-underline:before {
+  border-bottom-color: #A0B4C0;
+}
+
+.qty-field .MuiFilledInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom-color: #A0B4C0;
+}
+
+.qty-field .MuiFilledInput-underline:after {
+  border-bottom-color: #A0B4C0;
+}
+
+.custom-switch .Mui-checked {
+  color: white !important;
+}
+
+.custom-switch .MuiSwitch-track {
+  background-color: #7B1F34 !important;
+}
+
+.custom-switch .Mui-checked+.MuiSwitch-track {
+  background-color: #7B1F34 !important;
+}
+
+.custom-textfield .MuiFilledInput-root {
+  background-color: var(--theme-color);
+  color: white !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.custom-textfield .MuiFilledInput-root:not(:focus):hover {
+  background-color: var(--theme-color);
+  opacity: 0.9;
+  color: white !important;
+}
+
+.custom-textfield .MuiFilledInput-underline:before {
+  border-bottom-color: #A0B4C0;
+}
+
+.custom-textfield .MuiFilledInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom-color: #A0B4C0;
+}
+
+.custom-textfield .MuiFilledInput-underline:after {
+  border-bottom-color: #A0B4C0;
+}
+
+.custom-textfield .MuiInputLabel-root {
+  color: white !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.custom-textfield .MuiInputLabel-root.Mui-focused {
+  color: white !important;
+}
+
+.custom-textfield .MuiOutlinedInput-input {
+  background-color: #4F7586;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #A0B4C0 !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.custom-textfield .MuiSvgIcon-root {
+  color: #A0B4C0 !important;
+}
+
+.custom-textfield:hover .MuiSvgIcon-root {
+  color: #FFFFFF !important;
+}
+
+/* checkBox */
+.custom-checkbox {
+  color: white !important;
+}
+
+.custom-checkbox.Mui-checked {
+  color: white !important;
+}
+
+.custom-checkbox:hover {
+  background-color: rgba(255, 246, 246, 0.09) !important;
+}
+
+.custom-checkbox .MuiSvgIcon-root {
+  fill: white !important;
+}
+
+/* flex */
+.dflex {
+  display: flex;
+}
+
+.dblock {
+  display: block !important;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.flexSpaceBetween {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  width: 100%;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.floatRight {
+  float: right;
+}
+
+.textRight {
+  text-align: end;
+}
+
+.pt-3 {
+  padding-top: 10px;
+}
+
+.pt-4 {
+  padding-top: 15px;
+}
+
+.pt-6 {
+  padding-top: 50px;
+}
+
+.ps-20 {
+  padding-left: 20px !important;
+}
+
+.ml-40 {
+  margin-left: 40px;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* color */
+.c-cyan {
+  color: #00a5ae !important;
+}
+
+.c-white {
+  color: white !important;
+}
+
+/* font size */
+.fs-12 {
+  font-size: 12px !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+/* For small screens (e.g., mobile) */
+.fs-35 {
+  font-size: 25px !important;
+  font-family: 'FSAlbert', sans-serif !important;
+}
+
+.fw-7 {
+  font-weight: 700;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+  .fs-35 {
+    font-size: 25px !important;
+  }
+}
+
+/* For large screens (e.g., desktop) */
+@media (min-width: 1024px) {
+  .fs-35 {
+    font-size: 35px !important;
+
+    font-family: 'FSAlbert', sans-serif !important;
+  }
+}
+
+.fs-60 {
+  font-size: 60px !important;
+  font-family: "FSAlbert", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  .fs-60 {
+    font-size: 40px !important; /* Reduced size for mobile */
+  }
+}
+
+.fw-7 {
+  font-weight: 700 !important;
+}
+
+/* width */
+
+.w-300 {
+  width: 300px !important;
+}
+
+.w-600 {
+  max-width: 700px !important;
+}
+
+/* buttons */
+
+.main-button,
+.MuiButton-root.main-button,
+.css-kdevic-MuiButtonBase-root-MuiButton-root,
+.css-qlzem8-MuiButtonBase-root-MuiButton-root,
+.css-svissm-MuiButtonBase-root-MuiButton-root.MuiButton-containedPrimary,
+.css-svissm-MuiButtonBase-root-MuiButton-root.MuiButton-containedSecondary,
+.css-7stwd1-MuiButtonBase-root-MuiButton-root.MuiButton-containedPrimary,
+.css-7stwd1-MuiButtonBase-root-MuiButton-root.MuiButton-containedSecondary {
+    background-color: var(--button-color) !important;
+    color: var(--general-text-color) !important; /* Updated to use general text color */
+    text-transform: capitalize !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px !important; /* Changed to 5px */
+    border: none !important;
+    outline: none !important;
+    padding: 8px 16px !important;
+    font-size: 16px !important;
+    cursor: pointer;
+    font-family: 'FSAlbert', sans-serif !important;
+}
+
+.main-button:hover,
+.MuiButton-root.main-button:hover,
+.css-kdevic-MuiButtonBase-root-MuiButton-root:hover,
+.css-qlzem8-MuiButtonBase-root-MuiButton-root:hover,
+.css-svissm-MuiButtonBase-root-MuiButton-root.MuiButton-containedPrimary:hover,
+.css-svissm-MuiButtonBase-root-MuiButton-root.MuiButton-containedSecondary:hover,
+.css-7stwd1-MuiButtonBase-root-MuiButton-root.MuiButton-containedPrimary:hover,
+.css-7stwd1-MuiButtonBase-root-MuiButton-root.MuiButton-containedSecondary:hover {
+    background-color: var(--button-color) !important;
+    opacity: 0.8 !important;
+    color: var(--general-text-color) !important; /* Updated to use general text color */
+}
+
+/* Specific style for the "Let's start talking" button */.rightSideBarBottom .main-button,
+.rightSideBarBottom .MuiButton-root.main-button {
+    font-size: 14px !important;
+    border-radius: 0 !important;
+    background-color: var(--button-color) !important;
+    color: var(--general-text-color) !important; /* Updated to use general text color */
+}
+
+.rightSideBarBottom .main-button:hover,
+.rightSideBarBottom .MuiButton-root.main-button:hover {
+    background-color: var(--button-color) !important;
+    opacity: 0.8 !important;
+}
+
+.css-1gnd1fd-MuiButton-endIcon>*:nth-of-type(1) {
+    color: var(--general-text-color) !important; /* Updated to use general text color */
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+/* Add this new rule */
+.custom-textfield .MuiSvgIcon-root[data-testid="CalendarIcon"],
+.custom-textfield:hover .MuiSvgIcon-root[data-testid="CalendarIcon"] {
+  color: #A0B4C0 !important;
+  fill: #A0B4C0 !important;
+}
+
+/* Add this new rule at the end of the file */
+.custom-textfield .MuiSvgIcon-root[data-testid="CalendarIcon"],
+.custom-textfield .MuiSvgIcon-root[data-testid="CalendarTodayIcon"],
+.custom-textfield .MuiIconButton-root .MuiSvgIcon-root,
+.custom-textfield:hover .MuiSvgIcon-root[data-testid="CalendarIcon"],
+.custom-textfield:hover .MuiSvgIcon-root[data-testid="CalendarTodayIcon"],
+.custom-textfield:hover .MuiIconButton-root .MuiSvgIcon-root {
+  color: #A0B4C0 !important;
+  fill: #A0B4C0 !important;
+}
+
+/* Styling for the date input */
+.custom-textfield input[type="date"] {
+  color: white;
+}
+
+/* Styling for the calendar icon */
+.custom-textfield input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+/* For Firefox */
+.custom-textfield input[type="date"]::-moz-calendar-picker-indicator {
+  filter: invert(1) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+/* For Edge */
+.custom-textfield input[type="date"]::-ms-clear {
+  display: none;
+}
+
+.custom-textfield input[type="date"]::-ms-reveal {
+  filter: invert(1) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+/* Add this at the end of the file */
+.dashboard-header {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding-left: 10px;
+    }
+}
+
+/* Add this at the end of the file */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.footer-content a {
+    white-space: nowrap;
+}
+
+.footer-content a:not(:last-child)::after {
+    content: '|';
+    margin-left: 15px;
+    color: yellow;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content a:not(:last-child)::after {
+        content: '';
+        margin: 0;
+    }
+}
+
+/* Add or modify these styles */
+.footer {
+    padding: 20px 20px 20px 20px; /* Added left and right padding */
+}
+
+.footer .fs-60 {
+    display: block;
+    font-weight: 300 !important;
+    margin-bottom: 16px; /* Added margin bottom */
+    padding-left: 20px; /* Added left padding specifically for the title */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .footer .fs-60 {
+        padding-left: 0; /* Remove left padding on smaller screens */
+        text-align: center; /* Center the text on smaller screens */
+        font-size: 30px !important; /* Even smaller for the footer on mobile */
+    }
+
+    .footer-content {
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.custom-textfield input[type="date"] {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.custom-textfield input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.custom-textfield .MuiInputBase-root {
+  background-color: transparent !important;
+}
+
+.custom-textfield .MuiInputBase-input {
+  color: white !important;
+}
+
+.custom-textfield .MuiInputLabel-root {
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 !important;
+    }
+
+    .headerNav {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 !important;
+    }
+
+    .logo-container {
+        margin-bottom: 0 !important;
+    }
+
+    .stepper-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+.tentSelectionCard {
+    padding: 10px;
+    border-radius: 20px;
+    height: auto;
+    margin: 5px !important;
+    font-family: 'FSAlbert', sans-serif !important;
+    border: 0px solid var(--secondary-color) !important;
+    box-sizing: border-box !important;
+}
+
+/* Target the "Let's start talking" button in the left sidebar */
+.filterTentList .MuiButton-contained,
+.filterTentList .MuiButton-root.MuiButton-contained {
+    background-color: var(--button-color) !important;
+    color: #FFFFFF !important;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-transform: none !important;
+    border-radius: 0 !important;
+    width: 60%; /* Increased from 50% to 60% */
+    justify-content: space-between;
+    padding: 12px 20px !important; /* Increased padding */
+    margin-top: 15px; /* Slightly increased top margin */
+    font-size: 16px !important; /* Increased font size */
+    font-family: 'FSAlbert', sans-serif !important;
+    margin-left: 0;
+    display: flex;
+}
+
+.filterTentList .MuiButton-contained:hover,
+.filterTentList .MuiButton-root.MuiButton-contained:hover {
+    background-color: var(--button-color) !important;
+    opacity: 0.8 !important;
+}
+
+/* Ensure the end icon (arrow) is properly aligned */
+.filterTentList .MuiButton-contained .MuiButton-endIcon {
+    margin-left: auto;
+}
+
+/* Footer styles */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.footer-content a {
+    white-space: nowrap;
+    transition: color 0.3s ease; /* Add smooth transition for color change */
+}
+
+.footer-content a:hover {
+    color: var(--secondary-color) !important; /* Change to secondary color on hover */
+}
+
+.footer-content a:not(:last-child)::after {
+    content: '|';
+    margin-left: 15px;
+    color: var(--secondary-color) !important; /* Changed from yellow to secondary color */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .footer-content a:not(:last-child)::after {
+        content: '';
+        margin: 0;
+    }
+}
+
+/* Styles for the Thank You page buttons */
+.thankyou .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thankyou .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Limit the maximum width of the container */
+}
+
+.thankyou .button-container .MuiButton-root {
+    flex: 1;
+    max-width: none;
+    min-width: 0;
+    width: calc(50% - 10px);
+    white-space: nowrap;
+}
+
+.thankyou .button-container .whiteButton,
+.thankyou .button-container .main-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thankyou .button-container .MuiButton-endIcon {
+    margin-left: 8px;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .thankyou .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .thankyou .button-container .MuiButton-root {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.thank-you-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--theme-color);
+}
+
+.thank-you-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.thank-you-footer {
+    margin-top: auto;
+    padding: 20px;
+}
+
+.thank-you-footer .fs-60 {
+    margin-bottom: 16px;
+    font-weight: 300 !important; /* Decreased font-weight */
+}
+
+@media (max-width: 768px) {
+    .thank-you-footer .fs-60 {
+        font-size: 30px !important;
+    }
+}
+
+/* Add this to your existing styles */
+.header-logo {
+    width: auto !important;
+    max-width: 150px !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .header-logo {
+        max-width: 100px !important;
+    }
+}
+
+/* Update the header-logo class */
+.header-logo {
+    width: auto !important;
+    max-width: 150px !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .header-logo {
+        max-width: 100px !important;
+    }
+}
+
+/* Add this new rule to ensure inline styles are not overridden */
+.header-logo[style*="width"] {
+    width: attr(style width) !important;
+}
+
+/* ... (other styles) ... */
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;  /* Change this line */
+    width: 100%;
+    max-width: 300px;
+}
+
+.header-logo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* ... (other styles) ... */
+
+/* Add or update these styles for the tent selection cards */
+.tentSelectionCard {
+    flex: 0 0 auto;
+    width: 300px; /* Set a fixed width for the card */
+    margin-right: 20px; /* Add some space between cards */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tentSelectType {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    padding: 10px 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) transparent;
+}
+
+.tentSelectType::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tentSelectType::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+}
+
+.tentSelectType::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Add a pseudo-element for extra space at the end of the scroll area */
+.tentSelectType::after {
+    content: '';
+    flex: 0 0 20px; /* Same as margin-right of .tentSelectionCard */
+}
+
+.tentSelectionCardBody {
+    height: 100%; /* Ensure the card body takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+.tentSekectionCardContent {
+    flex-grow: 1; /* Allow content to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+}
+
+.tentSekectionCardFooter {
+    margin-top: auto; /* Push the footer to the bottom of the card */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 900px) {
+    .tentSelectionCard {
+        width: 280px; /* Slightly smaller on mobile */
+        margin-right: 15px; /* Less space between cards on mobile */
+    }
+
+    .tentSelectType::after {
+        flex: 0 0 15px; /* Match the new margin-right */
+    }
+}
+
+/* ... (keep other existing styles) ... */
+
+h1, .fs-35, .css-1tzikk6-MuiTypography-root {
+  font-family: var(--h1-font-family, 'FSAlbert'), sans-serif !important;
+  font-size: var(--h1-font-size, 35px) !important;
+  font-weight: var(--h1-font-weight, 300) !important;
+  line-height: var(--h1-line-height, 1.2) !important;
+}
+
+h2, .css-1tzikk6-MuiTypography-root.MuiTypography-h2 {
+  font-family: var(--h2-font-family, 'FSAlbert'), sans-serif !important;
+  font-size: var(--h2-font-size, 25px) !important;
+  font-weight: var(--h2-font-weight, 300) !important;
+  line-height: var(--h2-line-height, 1.2) !important;
+}
+
+h3, .css-1tzikk6-MuiTypography-root.MuiTypography-h3 {
+  font-family: var(--h3-font-family, 'FSAlbert'), sans-serif !important;
+  font-size: var(--h3-font-size, 20px) !important;
+  font-weight: var(--h3-font-weight, 300) !important;
+  line-height: var(--h3-line-height, 1.2) !important;
+}
+
+/* Add this new style to target all Typography components */
+.MuiTypography-root {
+  font-family: var(--h1-font-family, 'FSAlbert'), sans-serif !important;
+}
+
+/* ... (rest of the styles remain unchanged) ... */
+
+h1, .h1 {
+  font-family: var(--h1-font-family);
+  color: var(--h1-color);
+}
+
+h2, .h2 {
+  font-family: var(--h2-font-family);
+  color: var(--h2-color);
+}
+
+h3, .h3 {
+  font-family: var(--h3-font-family);
+  color: var(--h3-color);
+}
+
+/* Styles for admin area */
+body.admin-page {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body.admin-page .MuiTypography-root,
+body.admin-page .MuiButton-root,
+body.admin-page .MuiInputBase-root,
+body.admin-page .MuiSvgIcon-root,
+body.admin-page .MuiInputLabel-root,
+body.admin-page .MuiFormHelperText-root {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body.admin-page .MuiListItemIcon-root {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* Override styles for admin area */
+body.admin-page .MuiCheckbox-root,
+body.admin-page .MuiCheckbox-root.Mui-checked,
+body.admin-page .MuiIconButton-root.MuiCheckbox-root,
+body.admin-page .MuiCheckbox-colorSecondary.Mui-checked {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+body.admin-page .MuiSvgIcon-root,
+body.admin-page .MuiCheckbox-root .MuiSvgIcon-root {
+  fill: rgba(0, 0, 0, 0.54) !important;
+}
+
+body.admin-page input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none !important;
+}
+
+body.admin-page .MuiInputAdornment-root .MuiSvgIcon-root,
+body.admin-page .MuiIconButton-root .MuiSvgIcon-root,
+body.admin-page .MuiSvgIcon-root[data-testid="CalendarIcon"],
+body.admin-page .MuiSvgIcon-root[data-testid="CalendarTodayIcon"] {
+  color: rgba(0, 0, 0, 0.54) !important;
+  fill: rgba(0, 0, 0, 0.54) !important;
+}
+
+/* Remove or comment out any styles that are not prefixed with body.admin-page */
+
+/* ... (rest of the styles remain the same) ... */
+
+.selection-price {
+  font-family: 'FSAlbert', sans-serif !important;
+  font-size: 35px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  /* Remove the color property from here */
+}
+
+/* Add this new style for the date input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Add this new style for the date input and calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+    color: var(--general-text-color);
+}
+
+/* Ensure the calendar icon color changes with the general text color */
+.MuiInputAdornment-root .MuiSvgIcon-root {
+    color: var(--general-text-color) !important;
+}
+
+/* Custom checkbox styles */
+.MuiCheckbox-root {
+  color: #000000 !important;
+}
+
+.MuiCheckbox-root.Mui-checked {
+  color: #000000 !important;
+}
+
+.MuiCheckbox-root:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Target the specific class you mentioned */
+.css-1m9pwf3 {
+  color: #000000 !important;
+}
+
+/* Additional classes to cover all bases */
+.MuiIconButton-root.MuiCheckbox-root {
+  color: #000000 !important;
+}
+
+.MuiCheckbox-colorSecondary.Mui-checked {
+  color: #000000 !important;
+}
+
+/* Add these new styles */
+.MuiSvgIcon-root {
+  fill: #000000 !important;
+}
+
+.MuiCheckbox-root .MuiSvgIcon-root {
+  fill: #000000 !important;
+}
+
+/* ... (rest of the styles) */
+
+/* Style for animated labels */
+body:not(.admin-page) .MuiInputLabel-root.MuiInputLabel-shrink {
+  color: #000000 !important;
+}
+
+/* Style for focused input fields */
+body:not(.admin-page) .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+body:not(.admin-page) .MuiFilledInput-root.Mui-focused,
+body:not(.admin-page) .MuiInput-root.Mui-focused:after {
+  border-color: #000000 !important;
+}
+
+/* Style for hover state of input fields */
+body:not(.admin-page) .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+body:not(.admin-page) .MuiFilledInput-root:hover,
+body:not(.admin-page) .MuiInput-root:hover:not(.Mui-disabled):before {
+  border-color: #000000 !important;
+}
+
+/* Add this to your existing styles */
+.MuiInputAdornment-root .MuiSvgIcon-root,
+.MuiIconButton-root .MuiSvgIcon-root {
+    color: #000000 !important;
+    fill: #000000 !important;
+}
+
+/* Add these new styles for date input and calendar icon */
+input[type="date"],
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) !important;
+    cursor: pointer !important;
+}
+
+/* Ensure the calendar icon color changes with the general text color */
+.MuiInputAdornment-root .MuiSvgIcon-root,
+.MuiIconButton-root .MuiSvgIcon-root,
+.MuiSvgIcon-root[data-testid="CalendarIcon"],
+.MuiSvgIcon-root[data-testid="CalendarTodayIcon"] {
+    color: #000000 !important;
+    fill: #000000 !important;
+}
+
+/* Style for date input and calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(22%) sepia(17%) saturate(934%) hue-rotate(158deg) brightness(94%) contrast(88%) !important;
+    cursor: pointer !important;
+}
+
+input[type="date"] {
+    color: #000000 !important;
+}
+
+/* Ensure the calendar icon color is set to #304a5a */
+.MuiInputAdornment-root .MuiSvgIcon-root,
+.MuiIconButton-root .MuiSvgIcon-root,
+.MuiSvgIcon-root[data-testid="CalendarIcon"],
+.MuiSvgIcon-root[data-testid="CalendarTodayIcon"] {
+    color: #304a5a !important;
+    fill: #304a5a !important;
+}
+
+/* Add these new styles for extra specificity */
+body:not(.admin-page) input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(22%) sepia(17%) saturate(934%) hue-rotate(158deg) brightness(94%) contrast(88%) !important;
+}
+
+body:not(.admin-page) .MuiTextField-root input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(22%) sepia(17%) saturate(934%) hue-rotate(158deg) brightness(94%) contrast(88%) !important;
+}
+
+/* ... (rest of the styles) */
+
+/* Style for bullet points in product cards */
+.tentSelectionCardBody ul {
+  color: var(--general-text-color);
+}
+
+.tentSelectionCardBody ul li::marker {
+  color: var(--general-text-color);
+}
+
+/* ... (rest of the styles) */
+
+/* Styles for admin area */
+body.admin-page {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body.admin-page .MuiTypography-root,
+body.admin-page .MuiButton-root,
+body.admin-page .MuiInputBase-root,
+body.admin-page .MuiSvgIcon-root,
+body.admin-page .MuiInputLabel-root,
+body.admin-page .MuiFormHelperText-root {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body.admin-page .MuiListItemIcon-root {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* Override styles for admin area */
+body.admin-page .MuiCheckbox-root,
+body.admin-page .MuiCheckbox-root.Mui-checked,
+body.admin-page .MuiIconButton-root.MuiCheckbox-root,
+body.admin-page .MuiCheckbox-colorSecondary.Mui-checked {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+body.admin-page .MuiSvgIcon-root,
+body.admin-page .MuiCheckbox-root .MuiSvgIcon-root {
+  fill: rgba(0, 0, 0, 0.54) !important;
+}
+
+body.admin-page input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none !important;
+}
+
+body.admin-page .MuiInputAdornment-root .MuiSvgIcon-root,
+body.admin-page .MuiIconButton-root .MuiSvgIcon-root,
+body.admin-page .MuiSvgIcon-root[data-testid="CalendarIcon"],
+body.admin-page .MuiSvgIcon-root[data-testid="CalendarTodayIcon"] {
+  color: rgba(0, 0, 0, 0.54) !important;
+  fill: rgba(0, 0, 0, 0.54) !important;
+}
+
+/* ... (rest of the styles) ... */
+
+/* Add these new styles for the date input */
+input[type="date"],
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: var(--general-text-color) !important;
+    opacity: 1 !important;
+}
+
+/* Ensure text color remains consistent after selection on mobile */
+input[type="date"]:focus,
+input[type="date"]:valid {
+    color: var(--general-text-color) !important;
+}
+
+/* Style for WebKit browsers (Chrome, Safari) */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: var(--general-text-color) !important;
+}
+
+/* Style for Firefox */
+input[type="date"]::-moz-datetime-edit {
+    color: var(--general-text-color) !important;
+}
+
+/* Ensure the calendar icon color is set correctly */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(var(--general-text-color-invert)) !important;
+    cursor: pointer !important;
+}
+
+/* Additional styles for better cross-browser compatibility */
+.custom-textfield input[type="date"] {
+    color: var(--general-text-color) !important;
+    -webkit-text-fill-color: var(--general-text-color) !important;
+}
+
+/* ... (rest of the existing styles) ... */
+
+/* Ensure consistent text color throughout the app */
+body {
+    color: var(--general-text-color) !important;
+}
+
+/* Style for links in the app */
+a {
+    color: var(--general-text-color) !important;
+    text-decoration: none !important;
+    font-weight: bold !important; /* Make all links bold */
+}
+
+a:hover {
+    text-decoration: underline !important;
+    opacity: 0.8;
+}
+
+/* ... (keep other existing styles) ... */
+
+

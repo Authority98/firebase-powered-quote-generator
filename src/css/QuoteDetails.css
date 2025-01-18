@@ -1,0 +1,527 @@
+@import url('https://fonts.cdnfonts.com/css/fsalbert');
+
+
+.quoteContainer {
+    color: var(--general-text-color) !important;
+    box-sizing: border-box !important;
+    font-family: 'FSAlbert', sans-serif;
+    width: 100%;
+
+}
+
+.quoteDetails {
+    color: var(--general-text-color);
+}
+
+.leftSideBar {
+    padding: 60px !important;
+    box-sizing: border-box !important;
+}
+
+.leftSideBarBottom {
+    box-sizing: border-box !important;
+    padding: 0 60px !important;
+}
+
+.rightSideBar {
+    display: flex;
+    justify-content: right;
+    align-items: baseline !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+    padding-top: 60px !important;
+    padding-right: 40px !important;
+    /* background-color: #3c5966; */
+    background-color: #4F7586;
+}
+
+.rightSideBarBottom {
+    display: flex;
+    justify-content: left;
+    align-items: baseline !important;
+    box-sizing: border-box !important;
+    /* padding: 0 40px !important; */
+    /* background-color: #3c5966; */
+    background-color: var(--theme-color);
+}
+
+.rightSideBarBottom .p-40 {
+    padding: 0 40px !important;
+}
+
+.rightSideBarBottom .body {
+
+    width: 100%;
+}
+
+.rightSideBar .stepper-container .stepper .step {
+    background-color: transparent !important;
+    color: var(--general-text-color) !important;
+}
+
+.rightSideBar .stepper-container .stepper .step.active {
+    background-color: var(--secondary-color) !important;
+    color: white;
+    border: 1px solid white;
+    cursor: default;
+}
+
+.gridBody {
+    background-color: red;
+    padding-top: 0 !important;
+}
+
+.quoteContainer .contactInfoFlex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start !important;
+}
+
+.product-item {
+    padding: 40px;
+    border-bottom: 1px solid var(--general-text-color);
+}
+
+.product-item ul {
+    padding: 0 0 0 15px !important;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .quoteContainer .contactInfoFlex {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center !important;
+    }
+
+    .leftSideBar {
+        padding: 60px !important;
+        box-sizing: border-box !important;
+    }
+
+    .rightSideBar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center !important;
+        margin-left: auto !important;
+        box-sizing: border-box !important;
+        padding-top: 60px !important;
+        padding-right: 60 !important;
+        padding-bottom: 60px;
+        background-color: transparent !important;
+    }
+
+    .rightSideBarBottom {
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        padding: 60px 0px !important;
+        /* background-color: #3c5966; */
+        background-color: #4E7586;
+    }
+
+    .rightSideBarBottom .body {
+        width: 100% !important;
+    }
+
+    .product-item {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quoteContainer .contactInfoFlex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+    }
+
+    .quoteContainer .contactInfoFlex.column {
+        display: flex;
+    }
+
+    .quoteContainer .contactInfoTent .fs-16:not(:last-child)::after {
+        content: '';
+        margin: 0px;
+        color: var(--general-text-color);
+    }
+
+    .leftSideBar {
+        padding: 0 !important;
+        padding-top: 60px !important;
+        box-sizing: border-box !important;
+        display: flex;
+        justify-content: center !important;
+    }
+
+    .rightSideBar {
+        display: flex;
+        justify-content: center;
+        align-items: baseline !important;
+        margin-left: auto !important;
+        box-sizing: border-box !important;
+        padding-top: 30px !important;
+        padding-right: 0 !important;
+        padding-bottom: 60px;
+        background-color: transparent !important;
+    }
+}
+
+
+.headerContainer {
+    padding: 20px 0;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    overflow: visible;  /* Change this line */
+    width: 100%;
+    max-width: 300px;
+}
+
+.logo-wrapper {
+    padding-left: 20px;
+}
+
+.headerNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.headerNav h2 {
+    margin-bottom: 20px;
+}
+
+.stepper-container {
+    display: flex;
+    justify-content: flex-end; /* Change this to align right on desktop */
+    width: 100%;
+    padding: 20px 0;
+}
+
+.stepper {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end; /* Change this to align right on desktop */
+}
+
+.step {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #00a0ab;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 0 20px; /* Add horizontal margin */
+    flex-shrink: 0;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 40px;
+    height: 1px;
+    background-color: #00a0ab;
+}
+
+.step:first-child::before {
+    display: none;
+}
+
+.step.active {
+    background-color: #00a0ab;
+}
+
+@media (max-width: 768px) {
+    .stepper-container {
+        justify-content: center; /* Keep centered on mobile */
+    }
+
+    .stepper {
+        justify-content: center; /* Keep centered on mobile */
+        width: auto;
+    }
+
+    .step {
+        margin: 0 10px; /* Reduce margin on mobile */
+    }
+
+    .step::before {
+        width: 20px;
+    }
+}
+
+.deleteTent {
+    cursor: pointer;
+    width: 15px;
+
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    overflow: visible;  /* Change this line */
+    width: 100%;
+    max-width: 300px;
+}
+
+.logo-container > div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo-container img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+
+@media (max-width: 960px) {
+    .logo-container {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .logo-container > div {
+        justify-content: center;
+    }
+}
+
+/* Add these styles at the end of the file */
+
+.custom-select .MuiSelect-select {
+  color: white !important;
+  text-align: left !important;
+}
+
+.custom-select .MuiSelect-icon {
+  color: white !important;
+}
+
+.custom-select .MuiFilledInput-root {
+  background-color: transparent !important;
+}
+
+.custom-select .MuiFilledInput-root:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.custom-select .MuiFilledInput-root.Mui-focused {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.MuiPaper-root.MuiMenu-paper {
+  background-color: white !important;
+}
+
+.MuiMenuItem-root {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.custom-select.custom-textfield {
+    width: 300px !important;
+}
+
+.custom-select .MuiInputLabel-root {
+    color: white !important;
+}
+
+/* Ensure consistent width on all devices */
+@media (max-width: 600px) {
+    .custom-select.custom-textfield,
+    .custom-textfield {
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+}
+
+.selection-price {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 35px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: var(--general-text-color) !important;
+}
+
+.selection-price::before {
+    content: '£';
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Add these new styles at the end of the file */
+
+/* Style for the select input */
+.custom-select .MuiSelect-select {
+  color: var(--general-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Style for the select icon */
+.custom-select .MuiSelect-icon {
+  color: var(--general-text-color) !important;
+}
+
+/* Style for the select when focused */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.custom-select .MuiFilledInput-root.Mui-focused {
+  border-color: var(--general-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Style for the select label */
+.custom-select .MuiInputLabel-root {
+  color: var(--general-text-color) !important;
+}
+
+/* Style for the select options */
+.MuiMenu-paper .MuiMenuItem-root {
+  color: var(--general-text-color) !important;
+}
+
+/* Style for the selected option in the dropdown */
+.MuiMenu-paper .MuiMenuItem-root.Mui-selected {
+  background-color: rgba(var(--general-text-color-rgb), 0.08) !important;
+}
+
+/* Add this to ensure the text color changes when selecting an option */
+.custom-select .MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input,
+.custom-select .MuiSelect-select.MuiSelect-filled.MuiInputBase-input.MuiFilledInput-input {
+  color: var(--general-text-color) !important;
+}
+
+/* Remove background color from filled variant */
+.custom-select .MuiFilledInput-root {
+  background-color: transparent !important;
+}
+
+/* Style for hover state */
+.custom-select .MuiFilledInput-root:hover,
+.custom-select .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  background-color: rgba(var(--general-text-color-rgb), 0.04) !important;
+}
+
+/* Ensure consistent styling with other form fields */
+.custom-select.custom-textfield {
+  width: 300px !important;
+}
+
+@media (max-width: 600px) {
+  .custom-select.custom-textfield {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Update these styles for the custom select */
+.custom-select .MuiOutlinedInput-root,
+.custom-select .MuiFilledInput-root {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.custom-select .MuiOutlinedInput-notchedOutline,
+.custom-select .MuiFilledInput-underline:before,
+.custom-select .MuiFilledInput-underline:after {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--general-text-color) !important;
+}
+
+.custom-select .MuiSelect-select {
+  color: var(--general-text-color) !important;
+  background-color: transparent !important;
+  padding-left: 0 !important;
+}
+
+.custom-select .MuiSelect-icon {
+  color: var(--general-text-color) !important;
+}
+
+.custom-select .MuiInputLabel-root {
+  color: var(--general-text-color) !important;
+  transform: translate(0, 1.5px) scale(0.75);
+  transform-origin: top left;
+}
+
+.custom-select .MuiInputLabel-root.Mui-focused {
+  color: var(--general-text-color) !important;
+}
+
+/* Style for hover state */
+.custom-select .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.custom-select .MuiFilledInput-root:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid var(--general-text-color) !important;
+}
+
+/* Style for focused state */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.custom-select .MuiFilledInput-root.Mui-focused:after {
+  border-bottom: 2px solid var(--general-text-color) !important;
+}
+
+/* Ensure consistent styling with other form fields */
+.custom-select.custom-textfield {
+  width: 300px !important;
+}
+
+@media (max-width: 600px) {
+  .custom-select.custom-textfield {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Style for the dropdown menu */
+.MuiMenu-paper {
+  background-color: var(--theme-color) !important;
+}
+
+.MuiMenu-paper .MuiMenuItem-root {
+  color: var(--general-text-color) !important;
+}
+
+.MuiMenu-paper .MuiMenuItem-root:hover,
+.MuiMenu-paper .MuiMenuItem-root.Mui-selected {
+  background-color: rgba(var(--general-text-color-rgb), 0.08) !important;
+}
+

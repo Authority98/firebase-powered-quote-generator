@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "staging": "backend-for-quote-builder-app"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

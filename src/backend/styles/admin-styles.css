@@ -1,0 +1,230 @@
+/* General styles */
+body.admin-page {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5 !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.admin-background {
+  background-color: #f5f5f5; /* Light grey background for admin login page only */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-title {
+  color: #1a237e;
+  margin-bottom: 2rem;
+}
+
+/* Login page styles */
+.login-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  color: #1a237e;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #757575;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin-bottom: 1rem;
+}
+
+.login-input .MuiInputLabel-root,
+.login-input .MuiInputBase-input {
+  color: rgba(0, 0, 0, 0.87); /* Default text color */
+}
+
+.login-button {
+  margin-top: 2rem !important;
+  background-color: #304ffe !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 0 !important;
+}
+
+.login-button:hover {
+  background-color: #1a237e !important;
+}
+
+/* Admin Login Page Styles */
+body.admin-login-page {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.admin-login-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-title {
+  color: #1a237e !important;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.admin-login-input .MuiInputLabel-root,
+.admin-login-input .MuiOutlinedInput-input,
+.admin-login-input .MuiFilledInput-input,
+.admin-login-input .MuiInput-input {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.admin-login-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+.admin-login-input .MuiFilledInput-underline:before,
+.admin-login-input .MuiInput-underline:before {
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+.admin-login-button {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.admin-login-button:hover {
+  background-color: #1565c0 !important;
+}
+
+/* Admin Layout styles */
+.admin-appbar {
+  background-color: #3f51b5 !important;
+}
+
+.admin-sidebar {
+  background-color: #fff !important;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidebar-item {
+  color: #333 !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease;
+  padding: 12px 16px !important;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #000000 !important;
+}
+
+.sidebar-item.active {
+  background-color: #e0e0e0 !important;
+  color: #1976d2 !important;
+}
+
+.sidebar-item .MuiListItemIcon-root {
+  color: #757575;
+  min-width: 40px !important;
+}
+
+.sidebar-item.active .MuiListItemIcon-root {
+  color: #1976d2;
+}
+
+/* Main content area */
+body.admin-page .MuiBox-root[component="main"] {
+  background-color: #ffffff; /* Change back to white for the main admin area */
+  min-height: calc(100vh - 64px); /* Subtract the AppBar height */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Table styles */
+body.admin-page .MuiTableContainer-root {
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+body.admin-page .MuiTableHead-root {
+  background-color: #f0f4f8;
+}
+
+body.admin-page .MuiTableHead-root .MuiTableCell-root {
+  font-weight: bold;
+  color: #333333;
+}
+
+body.admin-page .MuiTableBody-root .MuiTableRow-root:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+
+/* Button styles */
+body.admin-page .MuiButton-contained {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  text-transform: none !important;
+}
+
+body.admin-page .MuiButton-contained:hover {
+  background-color: #1565c0 !important;
+}
+
+/* Override any conflicting styles */
+body.admin-page .MuiTypography-root,
+body.admin-page .MuiButton-root,
+body.admin-page .MuiInputBase-root,
+body.admin-page .MuiSvgIcon-root {
+  color: inherit;
+}
+
+body.admin-page .MuiListItemIcon-root {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+body.admin-page input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+/* Add this to your existing admin-styles.css */
+.MuiMenuItem-root {
+  font-size: 16px !important;
+}
+
+/* Ensure Playfair Display is loaded for the admin area */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* Add these styles if they're not already present */
+body.admin-page .MuiSelect-select {
+  display: flex;
+  align-items: center;
+}
+
+body.admin-page .MuiSelect-select > span {
+  margin-right: 8px;
+}

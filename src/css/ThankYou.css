@@ -1,0 +1,126 @@
+.thankyou {
+    display: flex;
+    flex-direction: column;
+}
+
+.thank-you-header {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.thankyouHeader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.whiteButton {
+    background-color: var(--button-color) !important;
+    color: var(--general-text-color) !important;
+    /* ... (other styles) */
+}
+
+.whiteButton:hover, .whiteButton:focus {
+    background-color: var(--button-color) !important;
+    opacity: 0.9;
+}
+
+.thankyou .fs-60 {
+    margin-top: 40px;
+    color: var(--general-text-color);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 30px; /* Adjust as needed */
+}
+
+.whiteButton,
+.main-button {
+    min-width: 250px; /* Increased from 200px to 250px */
+    padding: 10px 20px; /* Added padding for better text spacing */
+}
+
+@media(max-width: 900px) {
+    .thankyouHeader {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .thankyou .contactInfo {
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 770px) {
+    .thank-you-header {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .thankyouHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .thankyou .contactInfo {
+        margin-top: 100px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .whiteButton,
+    .main-button {
+        width: 100%;
+        max-width: 350px; /* Increased from 300px to 350px */
+    }
+}
+
+.thank-you-header .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    width: 100%;
+    max-width: 300px;
+}
+
+.thank-you-header .logo-container img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+
+@media (max-width: 770px) {
+    .thank-you-header {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .thank-you-header .logo-container {
+        justify-content: center;
+    }
+}
+
+.thank-you-page {
+    color: var(--general-text-color);
+}
+
+.thank-you-content {
+    color: var(--general-text-color);
+}
+
+.thank-you-footer {
+    color: var(--general-text-color);
+}
