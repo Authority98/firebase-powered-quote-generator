@@ -15,11 +15,12 @@ A sophisticated quote generation system built with React, Material-UI, and Fireb
   - Extras configuration
   - Design customization
   - Quote management
-- **Email Notifications**:
+- **Email System**:
   - Automated email notifications using Brevo API and SMTP
-  - Custom email templates for both admin and users
-  - Professional HTML email formatting
+  - Custom HTML email templates with responsive design
+  - Professional email formatting with dynamic content
   - Reliable email delivery through SMTP relay
+  - Modular template system for easy customization
 
 ## Tech Stack
 
@@ -28,6 +29,16 @@ A sophisticated quote generation system built with React, Material-UI, and Fireb
 - Firebase (Firestore)
 - Brevo (Email Service with SMTP)
 - Custom CSS
+
+## Project Structure
+
+- `/src`
+  - `/components`: Reusable UI components
+  - `/pages`: Main application pages
+  - `/backend`: Firebase configuration and admin functions
+  - `/assets`: Images and static resources
+  - `/utils`: Utility functions and templates
+    - `emailTemplate.js`: HTML email template generator
 
 ## Installation
 
@@ -83,13 +94,18 @@ MAIL_FROM_ADDRESS=your_from_email_address
 REACT_APP_BREVO_API_KEY=your_brevo_api_key_here
 ```
 
-## Project Structure
+## Email Template Customization
 
-- `/src`
-  - `/components`: Reusable UI components
-  - `/pages`: Main application pages
-  - `/backend`: Firebase configuration and admin functions
-  - `/assets`: Images and static resources
+The email template system is modular and can be easily customized:
+
+1. Template Location: `/src/utils/emailTemplate.js`
+2. Features:
+   - Responsive design
+   - Dynamic content injection
+   - Customizable styles
+   - Support for both plain text and HTML
+   - Logo integration
+   - Theme color customization
 
 ## License
 

@@ -13,6 +13,11 @@ All notable changes to this project will be documented in this file.
   - Added SMTP relay support through Brevo
   - Configured environment variables for SMTP settings
   - Updated documentation for SMTP setup
+- Modular email template system
+  - Created separate email template module
+  - Added responsive HTML email design
+  - Implemented dynamic content injection
+  - Added theme color and logo support
 
 ### Changed
 - Updated toggle switch pricing system
@@ -23,6 +28,8 @@ All notable changes to this project will be documented in this file.
 - Enhanced email delivery system
   - Integrated both Brevo API and SMTP for reliable email delivery
   - Updated email templates with improved formatting
+  - Moved email template to separate module for better maintainability
+  - Added support for customizable email styling
 
 ### Fixed
 - Removed UK postcode validation pattern from venue location field
@@ -36,6 +43,8 @@ All notable changes to this project will be documented in this file.
 - Updated Firebase data structure to support new pricing model
 - Added backward compatibility for existing price fields
 - Consolidated email configuration with both API and SMTP settings
+- Refactored email template into separate utility module
+- Improved code maintainability and reusability
 
 ## [1.0.0] - Initial Release
 
