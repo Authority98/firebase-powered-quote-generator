@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
-import plusIcon from '../assets/icon-plus.svg';
+import { IoAdd } from 'react-icons/io5';
 import ImageLightbox from '../components/ImageLightbox';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../backend/firebase-admin';
@@ -291,8 +291,7 @@ const TentSelectionCard = ({ product, onShortlist, selectedExtras, extrasInfo, i
     );
 
     // Define the path for the plus icon
-    const plusIconPath = "M14.1667 6.66667H8.33333V0.833333C8.33333 0.373333 7.96 0 7.5 0C7.04 0 6.66667 0.373333 6.66667 0.833333V6.66667H0.833333C0.373333 6.66667 0 7.04 0 7.5C0 7.96 0.373333 8.33333 0.833333 8.33333H6.66667V14.1667C6.66667 14.6267 7.04 15 7.5 15C7.96 15 8.33333 14.6267 8.33333 14.1667V8.33333H14.1667C14.6267 8.33333 15 7.96 15 7.5C15 7.04 14.6267 6.66667 14.1667 6.66667Z";
-
+    
     const productTypes = product ? Object.entries(product) : [];
 
     const renderProductImage = (product) => (
@@ -509,7 +508,7 @@ const TentSelectionCard = ({ product, onShortlist, selectedExtras, extrasInfo, i
                                 variant='contained'
                                 color="secondary"
                                 className='main-button'
-                                startIcon={createColoredSvg(plusIconPath)}
+                                startIcon={<IoAdd size={24} style={{ color: secondaryColor }} />}
                                 onClick={() => handleShortlist(product)}
                             >
                                 {shortlistStatus[product.id] || 'ShortList'}

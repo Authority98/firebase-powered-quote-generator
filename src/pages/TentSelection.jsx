@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Grid, Drawer, Button, useMediaQuery, useTheme, Typography, Box, IconButton } from '@mui/material';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import plusIcon from '../assets/icon-plus.svg';
+import { IoAdd } from 'react-icons/io5';
 import seatedIcon from '../assets/icon-seated.svg';
 import locationIcon from '../assets/icon-location.svg';
 import guestIcon from '../assets/icon-guests.svg';
@@ -814,7 +814,7 @@ function TentSelection() {
                                 <Button
                                     variant="contained"
                                     className="extras-button"
-                                    startIcon={<img src={plusIcon} alt="plus icon" />}
+                                    startIcon={<IoAdd size={24} />}
                                     onClick={handleDrawerToggle}
                                 >
                                     Extras
@@ -822,7 +822,7 @@ function TentSelection() {
                                 <Button
                                     variant="contained"
                                     className="proceed-button"
-                                    endIcon={<img src={arrowRight} alt="proceed" />}
+                                    endIcon={<ArrowForwardIos />}
                                     onClick={proceed}
                                 >
                                     Proceed
